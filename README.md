@@ -6,9 +6,9 @@ The paper detailing this work is currently under review.
 
 ## Introduction
 
-An online signature is typically represented by the parametric equations of its trajectory, denoted as \((x(t), y(t))\), which are captured when the signing tool contacts the digital surface. Signatures are a physiological biometric trait used in applications like access control, document forgery detection, and legal scenarios.
+An online signature is typically represented by the parametric equations of its trajectory, denoted as (x(t), y(t)), which are captured when the signing tool contacts the digital surface. Signatures are a physiological biometric trait used in applications like access control, document forgery detection, and legal scenarios.
 
-Since the execution of a signature inherently involves movements of the hand, arm, and forearm, these motions may contain kinematic and dynamic characteristics unique to the signer. Our work leverages this hypothesis by training an MLP-based neural network to estimate the kinematic and dynamic features, namely angular positions \(\theta(t)\), angular velocities \(\omega(t)\), and force torques \(\tau(t)\).
+Since the execution of a signature inherently involves movements of the hand, arm, and forearm, these motions may contain kinematic and dynamic characteristics unique to the signer. Our work leverages this hypothesis by training an MLP-based neural network to estimate the kinematic and dynamic features, namely angular positions, angular velocities, and force torques.
 
 ## Dataset
 
@@ -16,7 +16,7 @@ The training data is derived from the MCYT330 dataset, which includes 16,500 onl
 
 ## Model
 
-The model is an MLP-based neural network trained to estimate the kinematic and dynamic features of signatures. It takes the signature trajectory \((x(t), y(t))\) as input and outputs estimated features \((\hat{\theta}(t), \hat{\omega}(t), \hat{\tau}(t))\).
+The model is an MLP-based neural network trained to estimate the kinematic and dynamic features of signatures. It takes the signature trajectory as input and outputs estimated features.
 
 ## Notebook description
 
