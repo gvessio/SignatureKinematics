@@ -1,6 +1,6 @@
 # Neural network modelling of kinematic and dynamic features for signature verification
 
-This repository contains the weights of a neural network model that estimates kinematic and dynamic features from online signature trajectories. The model is designed to mimic the capabilities of a UR5e robotic arm by using a multilayer perceptron neural network to estimate angular positions, angular velocities, and force torques from the signature trajectory (x(t), y(t)).
+This repository contains the weights of a neural network model that estimates kinematic and dynamic features from online signature trajectories. The model is designed to mimic the capabilities of a UR5e robotic arm by using a multilayer perceptron (MLP)-based neural network to estimate angular positions, angular velocities, and force torques from the signature trajectory (x(t), y(t)).
 
 The paper detailing this work is currently under review.
 
@@ -16,7 +16,7 @@ The training data is derived from the MCYT330 dataset, which includes 16,500 onl
 
 ## Model
 
-The model is a multilayer perceptron (MLP)-based neural network trained to estimate the kinematic and dynamic features of signatures. It takes the signature trajectory as input and outputs estimated features.
+The model is an MLP-based neural network trained to estimate the kinematic and dynamic features of signatures. It takes the signature trajectory as input and outputs estimated features.
 
 To address the inherent variability in signature lengths and styles, the model employs a sliding window approach that incorporates the coordinates of five preceding and succeeding points along with the current point. This technique enriches the input data with contextual information, enhancing the MLP's ability to capture the dynamics of signature movements.
 
