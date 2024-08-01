@@ -16,7 +16,13 @@ The training data is derived from the MCYT330 dataset, which includes 16,500 onl
 
 ## Model
 
-The model is an MLP-based neural network trained to estimate the kinematic and dynamic features of signatures. It takes the signature trajectory as input and outputs estimated features.
+The model is a multilayer perceptron (MLP)-based neural network trained to estimate the kinematic and dynamic features of signatures. It takes the signature trajectory as input and outputs estimated features.
+
+To address the inherent variability in signature lengths and styles, the model employs a sliding window approach that incorporates the coordinates of five preceding and succeeding points along with the current point. This technique enriches the input data with contextual information, enhancing the MLP's ability to capture the dynamics of signature movements.
+
+The MLP architecture features a ReLU-activated hidden layer with twelve units, followed by a dropout layer with a 0.3 dropout rate to mitigate overfitting. The model is structured with three separate output heads, each comprising six units, to facilitate concurrent estimation of angular positions, velocities, and torques. The outputs are activated using the sigmoid function, ensuring they remain within the [0, 1] range, aligned with the normalization applied during preprocessing.
+
+The model is trained using a composite loss function, which is the sum of mean squared error (MSE) losses for each of the three output heads. This approach effectively balances simplicity and performance, enabling the model to generalize well across different datasets without the need for physical robotic systems, thus providing a cost-effective solution to estimating biomechanical features.
 
 ## Notebook description
 
